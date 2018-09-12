@@ -1,0 +1,45 @@
+題目
+
+問題描述：
+
+Write the program that reads in three integers and then determines and prints the largest and smallest integers in the group. Use only the programming techniques you have learned in this chapter.
+
+輸入說明：
+讀取三個整數
+
+輸出說明：
+找出三個數中的最大值與最小值 P.S 請務必注意輸出格式 請看輸出範例
+
+輸入範例：
+16 30 43
+
+輸出範例：
+largest:46
+smallest:13
+
+****************************************************************************
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+ int a,b,c,d,min,max;
+scanf("%d%d%d",&a,&b,&c);
+max=a;
+min=a;
+if(b>max) max=b;  //比較有效率的方法
+if(b<min) min=b;  //.....
+
+if(c>max) max=c;  //.....
+if(c<min) min=c;  //.....
+
+printf("largest:%d\n",max);
+printf("smallest:%d\n",min);
+
+
+return 0;
+}
+
+********************************************************************
