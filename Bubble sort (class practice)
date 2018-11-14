@@ -14,13 +14,11 @@ int main()
         printf("%4d",array[i]);
     }
     puts("");
-
-    printf("Data items in ascending order\n");  //print sort process
-    Bubblesort(array,SIZE);
+    Bubblesort(array,SIZE);//print sort process
 
     printf("\nData items in ascending order\n");
 
-    for(int i = 0; i < SIZE; ++i){  //print sort anwser
+    for(int i = 0; i < SIZE; ++i){//print sort anwser
         printf("%4d",array[i]);
     }
     puts("");
@@ -29,23 +27,25 @@ int main()
 }
 void Bubblesort(int *array,int size)
 {
-    for(int pass = 1; pass < size; ++pass){  //present the sorting round
+    for(int pass = 1; pass < size; ++pass){//present the sorting round
+        int hold;
+
         int flag=1;
 
-        for(int k = 0; k < size - 1; ++k){  //sorting
+        for(int k = 0; k < size - pass; ++k){//sorting
 
             if(array[k] > array[k+1]){
-                int hold = array[k];
+                hold = array[k];
                 array[k] = array[k+1];
                 array[k+1] = hold;
                 flag = 0;
             }
         }
-        for(int k = 0; k <= size - pass; ++k){
+        for(int k = 0; k < size - pass+1; ++k){
                 printf("%4d",array[k]);
         }
         puts("");
-        if(flag)  //if this round didn't change the value place
+        if(flag)//if this round didn't change the value place
             break;
     }
 }
