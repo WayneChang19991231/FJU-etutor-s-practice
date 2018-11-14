@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+void Bubblesort(int *,int);
+
+int main()
+{
+    int array[SIZE]={2,6,4,8,10,12,89,68,45,37};
+
+    printf("Data items in ascending order\n");
+
+    for(int i = 0; i < SIZE; ++i){//repeat original value
+        printf("%4d",array[i]);
+    }
+    puts("");
+
+    printf("Data items in ascending order\n");  //print sort process
+    Bubblesort(array,SIZE);
+
+    printf("\nData items in ascending order\n");
+
+    for(int i = 0; i < SIZE; ++i){  //print sort anwser
+        printf("%4d",array[i]);
+    }
+    puts("");
+
+    return 0;
+}
+void Bubblesort(int *array,int size)
+{
+    for(int pass = 1; pass < size; ++pass){  //present the sorting round
+        int flag=1;
+
+        for(int k = 0; k < size - 1; ++k){  //sorting
+
+            if(array[k] > array[k+1]){
+                int hold = array[k];
+                array[k] = array[k+1];
+                array[k+1] = hold;
+                flag = 0;
+            }
+        }
+        for(int k = 0; k <= size - pass; ++k){
+                printf("%4d",array[k]);
+        }
+        puts("");
+        if(flag)  //if this round didn't change the value place
+            break;
+    }
+}
