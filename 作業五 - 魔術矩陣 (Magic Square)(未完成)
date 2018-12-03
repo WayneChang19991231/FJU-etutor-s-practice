@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+
+    int magic[n][n] = {0}, sum = (((n*n)+1)/2)*n;
+    
+    while(scanf("%d",&n) != EOF){
+        
+    }
+
+    return 0;
+}
